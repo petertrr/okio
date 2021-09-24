@@ -44,6 +44,7 @@ kotlin {
     watchosX86()
     // Required to generate tests tasks: https://youtrack.jetbrains.com/issue/KT-26547
     linuxX64()
+    linuxArm64()
     macosX64()
     mingwX64()
   }

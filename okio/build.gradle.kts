@@ -35,6 +35,7 @@ plugins {
  *       |   |   '-- watchosX86
  *       |   '-- linux
  *       |       '-- linuxX64
+ *       |       '-- linuxArm64
  *       '-- mingw
  *           '-- mingwX64
  * ```
@@ -83,6 +84,7 @@ kotlin {
     watchosX86()
     // Required to generate tests tasks: https://youtrack.jetbrains.com/issue/KT-26547
     linuxX64()
+    linuxArm64()
     macosX64()
     mingwX64()
   }
@@ -219,7 +221,14 @@ kotlin {
         dependsOn(sizet64Main)
         dependsOn(linuxMain)
       }
+      val linuxArm64Main by getting {
+        dependsOn(sizet64Main)
+        dependsOn(linuxMain)
+      }
       val linuxX64Test by getting {
+        dependsOn(nativeTest)
+      }
+      val linuxArm64Test by getting {
         dependsOn(nativeTest)
       }
     }

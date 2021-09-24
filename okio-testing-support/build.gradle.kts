@@ -35,6 +35,7 @@ kotlin {
     watchosX86()
     // Required to generate tests tasks: https://youtrack.jetbrains.com/issue/KT-26547
     linuxX64()
+    linuxArm64()
     macosX64()
     mingwX64()
   }
@@ -71,6 +72,7 @@ kotlin {
       val watchosArm64Main by getting {}
       val watchosX86Main by getting {}
       val linuxX64Main by getting {}
+      val linuxArm64Main by getting {}
       val macosX64Main by getting {}
       val mingwX64Main by getting {}
       val nativeMains = listOf(
@@ -84,6 +86,7 @@ kotlin {
         watchosArm64Main,
         watchosX86Main,
         linuxX64Main,
+        linuxArm64Main,
       )
       for (it in nativeMains) {
         it.dependsOn(nativeMain)
